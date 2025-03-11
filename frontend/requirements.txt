@@ -1,0 +1,4 @@
+mesop==0.14.1
+pydantic==2.10.6
+requests==2.32.3
+gunicorn==23.0.0

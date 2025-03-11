@@ -1,0 +1,6 @@
+qdrant/
+scripts/__pycache__/
+.mypy_cache/
+.env
+scripts/.env
+ragcoon.code-workspace

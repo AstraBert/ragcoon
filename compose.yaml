@@ -1,0 +1,26 @@
+services:
+  qdrant:
+    image: qdrant/qdrant
+    ports:
+      - 6333:6333
+      - 6334:6334
+    volumes:
+      - ./qdrant/storage:/qdrant/storage
+  frontend:
+    build:
+      context: ./frontend/
+      dockerfile: Dockerfile 
+    ports:
+      - 8001:8001
+  backend:
+    build:
+      context: ./
+      dockerfile: Dockerfile.backend
+    ports:
+      - 8000:8000
+    secrets:
+      - groq_key
+
+secrets:
+  groq_key:
+    environment: GROQ_API_KEY
